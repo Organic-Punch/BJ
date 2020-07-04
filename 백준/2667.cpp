@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #pragma warning (disable : 4996)
 using namespace std;
-
+//단지번호붙이기
 int N, number = 1;
 int arr[25][25];
 bool vis[25][25];
