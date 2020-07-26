@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int arr[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+int idx[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
 
 string weekday(int sum) {
 	switch (sum) {
@@ -17,7 +17,7 @@ string weekday(int sum) {
 int main() {
 	int Month, day; scanf("%d %d", &Month, &day);
 	int sum = 0;
-	for (int i = 1; i < Month; i++) sum += arr[i];
+	for (int i = 1; i < Month; i++) sum += idx[i];
 	sum += day;
 	cout << weekday((sum % 7)) << '\n';
 	return 0;

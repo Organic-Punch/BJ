@@ -6,7 +6,7 @@ using namespace std;
 queue<pii>q;
 int N;
 bool check[101];
-vector<vector<int>>arr;
+vector<vector<int>>idx;
 vector<vector<int>>result;
 int cnt = 0;
 int i = 0;
@@ -15,7 +15,7 @@ void DFS(int x = 0) {
 	if (i != x || cnt != 0)check[x] = true;
 	cnt++;
 	for (int i = 0; i < N; i++) {
-		if (arr[x][i] == 1) {
+		if (idx[x][i] == 1) {
 			result[x][i] = 1;
 			DFS(i);
 		}
@@ -24,11 +24,11 @@ void DFS(int x = 0) {
 
 int main() {
 	cin >> N;
-	arr.resize(N, vector<int>(N, 0));
+	idx.resize(N, vector<int>(N, 0));
 	result.resize(N, vector<int>(N, 0));
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N; j++) {
-			cin >> arr[i][j];
+			cin >> idx[i][j];
 		}
 	}
 	for (i = 0; i < N; i++) {

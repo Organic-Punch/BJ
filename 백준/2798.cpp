@@ -4,7 +4,7 @@ using namespace std;
 
 #define LIMIT 3
 int N, M, result = 0;
-vector<int>arr;
+vector<int>idx;
 vector<bool>vis;
 
 void BackT(int idx = 0, int sum = 0, int cnt = 0) {
@@ -18,7 +18,7 @@ void BackT(int idx = 0, int sum = 0, int cnt = 0) {
 		for (int i = 0; i < N; i++) {
 			if (!vis[i]) {
 				vis[i] = true;
-				BackT(i, sum + arr[i], cnt + 1);
+				BackT(i, sum + idx[i], cnt + 1);
 				vis[i] = false;
 			}
 		}
@@ -30,8 +30,8 @@ int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0); cout.tie(0);
 	scanf("%d %d", &N, &M);
-	arr.resize(N, 0); vis.resize(N, 0);
-	for (int i = 0; i < N; i++) scanf("%d", &arr[i]);
+	idx.resize(N, 0); vis.resize(N, 0);
+	for (int i = 0; i < N; i++) scanf("%d", &idx[i]);
 	BackT();
 	cout << result;
 	return 0;

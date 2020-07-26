@@ -3,14 +3,14 @@
 
 using namespace std;
 int N, M;
-vector<int>arr[1001];
+vector<int>idx[1001];
 vector<bool>visited;
 
 void DFS(int idx) {
 	visited[idx] = true;
-	for (int i = 0; i < arr[idx].size(); i++) {
-		if (!visited[arr[idx][i]]) {
-			DFS(arr[idx][i]);
+	for (int i = 0; i < idx[idx].size(); i++) {
+		if (!visited[idx[idx][i]]) {
+			DFS(idx[idx][i]);
 		}
 	}
 }
@@ -22,8 +22,8 @@ int main() {
 	int cnt = 0;
 	for (int i = 0; i < M; i++) {
 		int a, b; cin >> a >> b;
-		arr[b].push_back(a);
-		arr[a].push_back(b);
+		idx[b].push_back(a);
+		idx[a].push_back(b);
 	}
 	for (int i = 1; i <= N; i++) {
 		if (!visited[i]) {
